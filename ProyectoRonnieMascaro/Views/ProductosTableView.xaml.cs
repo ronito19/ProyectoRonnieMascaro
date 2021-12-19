@@ -26,6 +26,7 @@ namespace ProyectoRonnieMascaro.Views
         public ProductosTableView()
         {
             InitializeComponent();
+
             E00EstadoInicial1();
         }
 
@@ -67,6 +68,8 @@ namespace ProyectoRonnieMascaro.Views
             stackDatosProductos.Visibility = Visibility.Collapsed;
 
             EditarActivado = false;
+
+            txWarning.Text = "";
         }
 
 
@@ -79,20 +82,41 @@ namespace ProyectoRonnieMascaro.Views
             btBorrarProducto.Visibility = Visibility.Collapsed;
             btEditarProducto.Visibility = Visibility.Visible;
             btCrearProducto.Visibility = Visibility.Visible;
+            btAtras.Visibility = Visibility.Collapsed;
 
             productoListView.IsEnabled = true;
 
             EditarActivado = false;
+
+            txWarning.Text = "";
         }
 
 
 
         public void E02ModificarProductos1()
         {
+
+
             btGuardarProducto.Visibility = Visibility.Visible;
             btBorrarProducto.Visibility = Visibility.Visible;
             btEditarProducto.Visibility = Visibility.Collapsed;
             btCrearProducto.Visibility = Visibility.Collapsed;
+            btAtras.Visibility = Visibility.Visible;
+
+            productoListView.IsEnabled = false;
+
+            EditarActivado = true;
+        }
+
+
+
+
+        public void E03CrearProductos()
+        {
+            btGuardarProducto.Visibility = Visibility.Visible;
+            btBorrarProducto.Visibility = Visibility.Visible;
+            btEditarProducto.Visibility = Visibility.Collapsed;
+            btAtras.Visibility = Visibility.Visible;
 
             productoListView.IsEnabled = false;
 
@@ -122,7 +146,6 @@ namespace ProyectoRonnieMascaro.Views
         private void btGuardarProducto_Click(object sender, RoutedEventArgs e)
         {
             E01MostrarDatosProductos1();
-            MessageBoxResult mensaje = MessageBox.Show(" Deseas guardar los cambios al modificarlo? ", " MODIFICAR PRODUCTO ", MessageBoxButton.YesNo, MessageBoxImage.Question);
 
             productoListView.IsEnabled = true;
         }
@@ -132,23 +155,13 @@ namespace ProyectoRonnieMascaro.Views
 
         private void btBorrarProducto_Click(object sender, RoutedEventArgs e)
         {
-            MessageBoxResult mensaje = MessageBox.Show(" Deseas borrar el producto? ", " BORRAR PRODUCTO ", MessageBoxButton.YesNo, MessageBoxImage.Question);
-
-            switch (mensaje)
-            {
-                case MessageBoxResult.Yes:
-                    ProductosModel listaProductos = (ProductosModel)productoListView.SelectedItem;
-                    ProductoDBHandler.BorrarProducto(listaProductos);
-
-                    MessageBox.Show(" Producto BORRADO ");
-                    break;
-
-                case MessageBoxResult.No:
-                    break;
-            }
+            
             E01MostrarDatosProductos1();
             productoListView.IsEnabled = true;
         }
+
+
+
 
         private void btnAceptarProveedor_Click(object sender, RoutedEventArgs e)
         {
@@ -156,15 +169,38 @@ namespace ProyectoRonnieMascaro.Views
             cmbListaProveedores.SelectedIndex = cmbListaProveedores.Items.Count;
         }
 
+
+
+
         private void Button_Click(object sender, RoutedEventArgs e)
         {
 
         }
 
+
+
+
         private void btnNuevoProveedor_Click(object sender, RoutedEventArgs e)
         {
             dialogProveedores.IsOpen = false;
             cmbListaProveedores.SelectedIndex = cmbListaProveedores.Items.Count;
+        }
+
+
+
+
+        private void btCrearProducto_Click(object sender, RoutedEventArgs e)
+        {
+            E02ModificarProductos1();
+            productoListView.SelectedIndex = productoListView.Items.Count;
+        }
+
+
+
+
+        private void btAtras_Click(object sender, RoutedEventArgs e)
+        {
+            E01MostrarDatosProductos1();
         }
     }
 }

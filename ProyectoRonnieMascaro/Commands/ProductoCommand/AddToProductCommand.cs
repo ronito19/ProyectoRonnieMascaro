@@ -1,6 +1,8 @@
-﻿using ProyectoRonnieMascaro.ViewModels;
+﻿using ProyectoRonnieMascaro.Services;
+using ProyectoRonnieMascaro.ViewModels;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -19,8 +21,11 @@ namespace ProyectoRonnieMascaro.Commands.ProductoCommand
 
         public void Execute(object parameter)
         {
-            throw new NotImplementedException();
+            bool OKinsertar = ProductoDBHandler.NuevoProveedor(proveedor);
         }
+
+
+        public ObservableCollection<string> proveedor { get; set; }
 
 
 

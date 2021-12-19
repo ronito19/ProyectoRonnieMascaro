@@ -1,4 +1,6 @@
-﻿using ProyectoRonnieMascaro.ViewModels;
+﻿using ProyectoRonnieMascaro.Models;
+using ProyectoRonnieMascaro.Services;
+using ProyectoRonnieMascaro.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -19,7 +21,25 @@ namespace ProyectoRonnieMascaro.Commands.ProveedorCommand
 
         public void Execute(object parameter)
         {
-            throw new NotImplementedException();
+            if (parameter is String)
+            {
+                string accion = parameter.ToString();
+                Console.WriteLine(parameter.ToString());
+
+                if (accion.Equals("borrar"))
+                {
+                    int index = ProveedorDBHandler.BorrarProveedor(proveedoresTableViewModel.CurrentProveedor);
+                    proveedoresTableViewModel.ListaProveedores.RemoveAt(index);
+                    proveedoresTableViewModel.CurrentProveedor = new Models.ProveedoresModel();
+                }
+
+                if (parameter is ProveedoresModel)
+                {
+                    ProveedoresModel proveedor = (ProveedoresModel)parameter;
+                    proveedoresTableViewModel.CurrentProveedor = (ProveedoresModel)proveedor.Clone();
+                    proveedoresTableViewModel.SelectedProveedor = (ProveedoresModel)proveedor.Clone();
+                }
+            }
         }
 
 

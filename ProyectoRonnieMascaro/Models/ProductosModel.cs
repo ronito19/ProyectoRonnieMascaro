@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace ProyectoRonnieMascaro.Models
 {
-    class ProductosModel : INotifyPropertyChanged
+    public class ProductosModel : INotifyPropertyChanged
     {
         public event PropertyChangedEventHandler PropertyChanged;
 
@@ -57,6 +57,7 @@ namespace ProyectoRonnieMascaro.Models
 
 
 
+
         private string clase;
 
         public string Clase
@@ -72,10 +73,16 @@ namespace ProyectoRonnieMascaro.Models
             }
         }
 
+
+
+
         internal ProductosModel Clone()
         {
             throw new NotImplementedException();
         }
+
+
+
 
         private string marca;
 
@@ -91,6 +98,7 @@ namespace ProyectoRonnieMascaro.Models
                 OnPropertyChanged(nameof(Marca));
             }
         }
+
 
 
 
@@ -193,5 +201,8 @@ namespace ProyectoRonnieMascaro.Models
                 OnPropertyChanged(nameof(Stock));
             }
         }
+
+
+        public static object listaProveedores;
     }
 }

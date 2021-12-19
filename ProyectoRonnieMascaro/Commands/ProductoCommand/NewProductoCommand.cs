@@ -1,9 +1,11 @@
-﻿using ProyectoRonnieMascaro.ViewModels;
+﻿using ProyectoRonnieMascaro.Services;
+using ProyectoRonnieMascaro.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 using System.Windows.Input;
 
 namespace ProyectoRonnieMascaro.Commands.ProductoCommand
@@ -19,7 +21,15 @@ namespace ProyectoRonnieMascaro.Commands.ProductoCommand
 
         public void Execute(object parameter)
         {
-            throw new NotImplementedException();
+            bool OKinsertar = ProductoDBHandler.NuevoProducto(productosTableViewModel.CurrentProducto);
+            if (OKinsertar)
+            {
+                MessageBox.Show(" Se ha creado el producto ");
+            }
+            else
+            {
+                MessageBox.Show(" Error al crear el producto ");
+            }
         }
 
 

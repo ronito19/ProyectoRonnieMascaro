@@ -19,7 +19,7 @@ namespace ProyectoRonnieMascaro.Commands.ProveedorCommand
 
         public void Execute(object parameter)
         {
-            throw new NotImplementedException();
+            proveedoresTableViewModel.CurrentProveedor = (Models.ProveedoresModel)parameter;
         }
 
 

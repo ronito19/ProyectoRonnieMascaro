@@ -24,13 +24,41 @@ namespace ProyectoRonnieMascaro.Services
             {
                 ProductosModel pro = new ProductosModel();
                 pro._Id = i.ToString();
-                pro.Proveedor.Add("Proveedor 1");
                 pro.Clase = "Gafas Graduadas";
                 pro.Marca = "Gucci";
                 pro.Tipo = "Lentillas Blandas";
                 pro.FechaEntrada = DateTime.Today;
                 listaProductos.Add(pro);
             }
+        }
+
+
+
+
+        public static bool GuardarProducto(ProductosModel producto)
+        {
+            bool okguardar = false;
+
+            foreach (ProductosModel pro in listaProductos)
+            {
+                if (pro._Id == producto._Id)
+                {
+                    pro.Proveedor = producto.Proveedor;
+                    pro.Clase = producto.Clase;
+                    pro.Marca = producto.Marca;
+                    pro.Tipo = producto.Tipo;
+                    pro.Referencia = producto.Referencia;
+                    pro.Descripcion = producto.Descripcion;
+                    pro.Precio = producto.Precio;
+                    pro.FechaEntrada = producto.FechaEntrada;
+                    pro.Stock = producto.Stock;
+                    okguardar = true;
+                    break;
+                }
+
+            }
+
+            return okguardar;
         }
 
 

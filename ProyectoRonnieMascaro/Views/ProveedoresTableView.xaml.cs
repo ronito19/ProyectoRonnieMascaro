@@ -66,6 +66,8 @@ namespace ProyectoRonnieMascaro.Views
             stackDatosPro.Visibility = Visibility.Collapsed;
 
             EditarActivado = false;
+
+            txWarning.Text = "";
         }
 
 
@@ -82,12 +84,15 @@ namespace ProyectoRonnieMascaro.Views
             proveedorListView.IsEnabled = true;
 
             EditarActivado = false;
+
+            txWarning.Text = "";
         }
 
 
 
         public void E02ModificarDatos()
         {
+
             btnGuardarDatos.Visibility = Visibility.Visible;
             btnBorrarDatos.Visibility = Visibility.Visible;
             btnEditarDatos.Visibility = Visibility.Collapsed;
@@ -107,6 +112,7 @@ namespace ProyectoRonnieMascaro.Views
             btnGuardarDatos.Visibility = Visibility.Visible;
             btnBorrarDatos.Visibility = Visibility.Visible;
             btnEditarDatos.Visibility = Visibility.Collapsed;
+            btnAtras.Visibility = Visibility.Visible;
 
             proveedorListView.IsEnabled = false;
 
@@ -131,35 +137,9 @@ namespace ProyectoRonnieMascaro.Views
 
 
 
-        private void btnBorrarDatos_Click(object sender, RoutedEventArgs e)
-        {
-
-            MessageBoxResult mensaje = MessageBox.Show(" Deseas borrar al proveedor? ", " BORRAR PROVEEDOR ", MessageBoxButton.YesNo, MessageBoxImage.Question);
-
-            switch (mensaje)
-            {
-                case MessageBoxResult.Yes:
-                    ProveedoresModel listaProveedores = (ProveedoresModel)proveedorListView.SelectedItem;
-                    ProveedorDBHandler.BorrarProveedor(listaProveedores);
-
-                    MessageBox.Show(" Proveedor BORRADO ");
-                    break;
-
-                case MessageBoxResult.No:
-                    break;
-            }
-            E01MostrarDatos();
-            proveedorListView.IsEnabled = true;
-        }
-
-
-
-
-
         private void btnGuardarDatos_Click(object sender, RoutedEventArgs e)
         {
             E01MostrarDatos();
-            MessageBoxResult mensaje = MessageBox.Show(" Deseas guardar los cambios al modificarlo? ", " MODIFICAR PROVEEDOR ", MessageBoxButton.YesNo, MessageBoxImage.Question);
 
             proveedorListView.IsEnabled = true;
         }
@@ -167,13 +147,23 @@ namespace ProyectoRonnieMascaro.Views
 
 
 
+        private void btnBorrarDatos_Click(object sender, RoutedEventArgs e)
+        {
+
+            E01MostrarDatos();
+            proveedorListView.IsEnabled = true;
+        }
 
 
 
+
+
+       
 
         private void btnCrearDatos_Click(object sender, RoutedEventArgs e)
         {
             E02ModificarDatos();
+
             proveedorListView.SelectedIndex = proveedorListView.Items.Count;
 
 

@@ -10,7 +10,7 @@ using System.Windows.Input;
 
 namespace ProyectoRonnieMascaro.ViewModels
 {
-    class ProveedoresTableViewModel : ViewModelBase
+    public class ProveedoresTableViewModel : ViewModelBase
     {
 
 

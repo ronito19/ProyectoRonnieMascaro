@@ -19,7 +19,7 @@ namespace ProyectoRonnieMascaro.Commands.ProductoCommand
 
         public void Execute(object parameter)
         {
-            throw new NotImplementedException();
+            productosTableViewModel.CurrentProducto = (Models.ProductosModel)parameter;
         }
 
 

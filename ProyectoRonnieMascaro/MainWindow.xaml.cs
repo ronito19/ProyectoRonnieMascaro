@@ -67,5 +67,10 @@ namespace ProyectoRonnieMascaro
         {
             DataContext = new MainViewModel();
         }
+
+        private void btProveedores_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

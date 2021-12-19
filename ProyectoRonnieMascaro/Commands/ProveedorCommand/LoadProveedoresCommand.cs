@@ -1,4 +1,5 @@
-﻿using ProyectoRonnieMascaro.ViewModels;
+﻿using ProyectoRonnieMascaro.Services;
+using ProyectoRonnieMascaro.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -19,7 +20,8 @@ namespace ProyectoRonnieMascaro.Commands.ProveedorCommand
 
         public void Execute(object parameter)
         {
-            throw new NotImplementedException();
+            ProveedorDBHandler.CargarListaSupuesta();
+            proveedoresTableViewModel.ListaProveedores = ProveedorDBHandler.ObtenerListaProveedores();
         }
 
 

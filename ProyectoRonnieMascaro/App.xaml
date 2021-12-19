@@ -5,9 +5,12 @@
              xmlns:viewsmodels="clr-namespace:ProyectoRonnieMascaro.ViewModels"
              xmlns:local="clr-namespace:ProyectoRonnieMascaro"
              StartupUri="MainWindow.xaml">
+    
+    
     <Application.Resources>
+        
         <ResourceDictionary>
-            <DataTemplate DataType="{x:Type  viewsmodels:PaginaPrincipalViewModel}">
+            <DataTemplate DataType="{x:Type viewsmodels:PaginaPrincipalViewModel}">
                 <views:PaginaPrincipal/>
             </DataTemplate>
 

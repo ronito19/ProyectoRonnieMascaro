@@ -1,4 +1,6 @@
-﻿using ProyectoRonnieMascaro.ViewModels;
+﻿using ProyectoRonnieMascaro.Models;
+using ProyectoRonnieMascaro.Services;
+using ProyectoRonnieMascaro.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -19,7 +21,25 @@ namespace ProyectoRonnieMascaro.Commands.ProductoCommand
 
         public void Execute(object parameter)
         {
-            throw new NotImplementedException();
+            if (parameter is String)
+            {
+                string accion = parameter.ToString();
+                Console.WriteLine(parameter.ToString());
+
+                if (accion.Equals("borrar"))
+                {
+                    int index = ProductoDBHandler.BorrarProducto(productosTableViewModel.CurrentProducto);
+                    productosTableViewModel.ListaProductos.RemoveAt(index);
+                    productosTableViewModel.CurrentProducto = new Models.ProductosModel();
+                }
+
+                if (parameter is ProductosModel)
+                {
+                    ProductosModel productos = (ProductosModel)parameter;
+                    productosTableViewModel.CurrentProducto = (ProductosModel)productos.Clone();
+                    productosTableViewModel.SelectedProductos = (ProductosModel)productos.Clone();
+                }
+            }
         }
 
 

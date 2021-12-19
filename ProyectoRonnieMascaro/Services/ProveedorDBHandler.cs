@@ -29,6 +29,30 @@ namespace ProyectoRonnieMascaro.Services
 
 
 
+
+        public static bool GuardarProveedor(ProveedoresModel proveedor)
+        {
+            bool okguardar = false;
+
+            foreach (ProveedoresModel p in listaProveedores)
+            {
+                if (p._Id == proveedor._Id)
+                {
+                    p.Nombre = proveedor.Nombre;
+                    p.Provincia = proveedor.Provincia;
+                    p.Telefono = proveedor.Telefono;
+                    okguardar = true;
+                    break;
+                }
+
+            }
+
+            return okguardar;
+        }
+
+
+
+
         public static bool NuevoProveedor(ProveedoresModel p)
         {
             bool OKinsertar = false;

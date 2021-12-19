@@ -10,7 +10,7 @@ using System.Windows.Input;
 
 namespace ProyectoRonnieMascaro.ViewModels
 {
-    class ProductosTableViewModel : ViewModelBase
+    public class ProductosTableViewModel : ViewModelBase
     {
         private ObservableCollection<ProductosModel> listaProductos { get; set; }
 
