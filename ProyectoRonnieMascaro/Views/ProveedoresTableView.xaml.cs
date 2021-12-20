@@ -83,7 +83,7 @@ namespace ProyectoRonnieMascaro.Views
 
             proveedorListView.IsEnabled = true;
 
-            EditarActivado = false;
+            EditarActivado = true;
 
             txWarning.Text = "";
         }
@@ -163,6 +163,7 @@ namespace ProyectoRonnieMascaro.Views
         private void btnCrearDatos_Click(object sender, RoutedEventArgs e)
         {
             E02ModificarDatos();
+
 
             proveedorListView.SelectedIndex = proveedorListView.Items.Count;
 

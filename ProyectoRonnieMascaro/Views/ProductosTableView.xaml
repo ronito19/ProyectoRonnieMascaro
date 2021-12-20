@@ -101,7 +101,7 @@
                                       FontSize="18" FontWeight="SemiBold" 
                                       Cursor="Hand"
                                       VerticalContentAlignment="Top"
-                                      ItemsSource="{Binding ListaProveedores}" DisplayMemberPath="Nombre"/>
+                                      ItemsSource="{Binding ListaNuevaProveedores}" DisplayMemberPath="_Id"/>
 
                                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
 
@@ -131,7 +131,7 @@
 
                 <ComboBox Grid.Row="2" Grid.Column="1" Foreground="white" Text="{Binding CurrentProducto.Clase,
                                                         UpdateSourceTrigger=PropertyChanged}"
-                                                        IsEnabled="{Binding ElementName=vista, Path=EditarActivado}" FontWeight="Bold">
+                                                         FontWeight="Bold">
                     <ComboBoxItem Content="Gafas Graduadas"/>
                     <ComboBoxItem Content="Gafas de Sol"/>
                     <ComboBoxItem Content="Gafas Deportivas"/>
@@ -141,7 +141,7 @@
 
                 <ComboBox Grid.Row="3" Grid.Column="1" Foreground="White" Text="{Binding CurrentProducto.Marca,
                                                         UpdateSourceTrigger=PropertyChanged}"
-                                                        IsEnabled="{Binding ElementName=vista, Path=EditarActivado}" FontWeight="Bold">
+                                                         FontWeight="Bold">
                     <ComboBoxItem Content="Arnette"/>
                     <ComboBoxItem Content="Bvlgari"/>
                     <ComboBoxItem Content="Carrera"/>
@@ -156,7 +156,7 @@
 
                 <ComboBox Grid.Row="4" Grid.Column="1" Foreground="white" Text="{Binding CurrentProducto.Tipo,
                                                         UpdateSourceTrigger=PropertyChanged}"
-                                                        IsEnabled="{Binding ElementName=vista, Path=EditarActivado}" FontWeight="Bold">
+                                                         FontWeight="Bold">
                     <ComboBoxItem Content="Montura de Metal"/>
                     <ComboBoxItem Content="Montura de Plastico"/>
                     <ComboBoxItem Content="Lentillas Blandas"/>
@@ -181,7 +181,7 @@
             <TextBlock x:Name="txWarning" Text="WARNING" Foreground="Red" TextAlignment="Center" FontWeight="Bold" FontSize="14" Height="29" Margin="0,0,0.4,0"/>
 
             <StackPanel Margin="20" Orientation="Horizontal" HorizontalAlignment="Center">
-                <Button x:Name="btCrearProducto" Content="CREAR" Width="60" HorizontalAlignment="Center" Margin="2" FontSize="8"  Background="#FF460DAB" Cursor="Hand" Click="btCrearProducto_Click"/>
+                <Button x:Name="btCrearProducto" Content="CREAR" Width="60" HorizontalAlignment="Center" Margin="2" FontSize="8"  Background="#FF460DAB" Cursor="Hand" Click="btCrearProducto_Click" CommandParameter="nuevo"/>
                 <Button x:Name="btEditarProducto" Content="EDITAR" Width="60" HorizontalAlignment="Center" Margin="2" FontSize="8" Click="btEditarProducto_Click" Background="#FF460DAB" />
                 <Button x:Name="btGuardarProducto" Content="GUARDAR" Width="60" HorizontalAlignment="Center" Margin="2" FontSize="8" Click="btGuardarProducto_Click" Background="#FF460DAB" />
                 <Button x:Name="btBorrarProducto" Content="BORRAR" Width="60" HorizontalAlignment="Center" Margin="2" FontSize="8" Command="{Binding DeleteProductoCommand}" Click="btBorrarProducto_Click" Background="#FF460DAB"/>

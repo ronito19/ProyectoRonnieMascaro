@@ -90,6 +90,7 @@
     <Compile Include="Commands\ProductoCommand\LoadProductoCommand.cs" />
     <Compile Include="Commands\ProductoCommand\LoadProductosCommand.cs" />
     <Compile Include="Commands\ProductoCommand\NewProductoCommand.cs" />
+    <Compile Include="Commands\ProductoCommand\ProductsCommand.cs" />
     <Compile Include="Commands\ProductoCommand\SaveProductoCommand.cs" />
     <Compile Include="Commands\ProveedorCommand\CancelProveedorCommand.cs" />
     <Compile Include="Commands\ProveedorCommand\CreateProveedorCommand.cs" />
@@ -97,6 +98,7 @@
     <Compile Include="Commands\ProveedorCommand\LoadProveedorCommand.cs" />
     <Compile Include="Commands\ProveedorCommand\LoadProveedoresCommand.cs" />
     <Compile Include="Commands\ProveedorCommand\NewProveedorCommand.cs" />
+    <Compile Include="Commands\ProveedorCommand\ProveedoresCommand.cs" />
     <Compile Include="Commands\ProveedorCommand\SaveProveedorCommand.cs" />
     <Compile Include="Commands\UpdateViewCommand.cs" />
     <Compile Include="Models\ProductosModel.cs" />

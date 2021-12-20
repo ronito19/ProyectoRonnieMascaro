@@ -69,19 +69,19 @@
                 <TextBlock Grid.Row="2" Text="PROVINCIA" TextAlignment="Right" Margin="6" FontWeight="Bold" Grid.ColumnSpan="2"/>
                 <TextBlock Grid.Row="3" Text="TELEFONO" TextAlignment="Right" Margin="6" FontWeight="Bold" Grid.ColumnSpan="2"/>
 
-                <TextBox Grid.Row="0" Grid.Column="2" TextAlignment="Left" FontWeight="Bold" Foreground="white" Text="{Binding CurrentProveedor._Id, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" IsEnabled="{Binding ElementName=vista, Path=EditarActivado}" Margin="7.6,8,8.4,0" Grid.RowSpan="1"/>
-                <TextBox Grid.Row="1" Grid.Column="1" TextAlignment="Left" FontWeight="Bold" Foreground="white" Text="{Binding CurrentProveedor.Nombre, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" IsEnabled="{Binding ElementName=vista, Path=EditarActivado}" Margin="64.4,0.2,0.4,38.2" Grid.RowSpan="2" Grid.ColumnSpan="2"/>
-                <TextBox Grid.Row="2" Grid.Column="1" TextAlignment="Left" Foreground="white" FontWeight="Bold" Text="{Binding CurrentProveedor.Provincia, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" IsEnabled="{Binding ElementName=vista, Path=EditarActivado}" Margin="64.4,0.2,0.4,51" Grid.RowSpan="2" Grid.ColumnSpan="2"/>
-                <TextBox Grid.Row="2" Grid.Column="1" TextAlignment="Left" Foreground="white" FontWeight="Bold" Text="{Binding CurrentProveedor.Telefono, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" IsEnabled="{Binding ElementName=vista, Path=EditarActivado}" Margin="64.4,38.2,0.4,10.2" Grid.ColumnSpan="2" Grid.RowSpan="2"/>
+                <TextBox Grid.Row="0" Grid.Column="2" TextAlignment="Left" FontWeight="Bold" Foreground="white" Text="{Binding CurrentProveedor._Id, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"  Margin="7.6,8,8.4,0" Grid.RowSpan="1"/>
+                <TextBox Grid.Row="1" Grid.Column="1" TextAlignment="Left" FontWeight="Bold" Foreground="white" Text="{Binding CurrentProveedor.Nombre, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"  Margin="64.4,0.2,0.4,38.2" Grid.RowSpan="2" Grid.ColumnSpan="2"/>
+                <TextBox Grid.Row="2" Grid.Column="1" TextAlignment="Left" Foreground="white" FontWeight="Bold" Text="{Binding CurrentProveedor.Provincia, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"  Margin="64.4,0.2,0.4,51" Grid.RowSpan="2" Grid.ColumnSpan="2"/>
+                <TextBox Grid.Row="2" Grid.Column="1" TextAlignment="Left" Foreground="white" FontWeight="Bold" Text="{Binding CurrentProveedor.Telefono, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"  Margin="64.4,38.2,0.4,10.2" Grid.ColumnSpan="2" Grid.RowSpan="2"/>
             </Grid>
 
 
             <TextBlock x:Name="txWarning" Text="WARNING" Foreground="Red" TextAlignment="Center" FontWeight="Bold" FontSize="14" Height="31" Margin="0,0,0.4,0"/>
 
             <StackPanel Margin="20" Orientation="Horizontal" HorizontalAlignment="Center">
-                <Button x:Name="btnEditarDatos" Content="EDITAR" Width="60" HorizontalAlignment="Center" Margin="2" Click="btnEditarDatos_Click" Background="#FF460DAB" FontSize="8"/>
-                <Button x:Name="btnCrearDatos" Content="CREAR" Width="60" HorizontalAlignment="Center" Margin="2" Click="btnCrearDatos_Click" Background="#FF460DAB" FontSize="8"/>
-                <Button x:Name="btnGuardarDatos" Content="GUARDAR" Width="60" HorizontalAlignment="Center" Margin="2" Click="btnGuardarDatos_Click" Background="#FF460DAB" FontSize="8"/>
+                <Button x:Name="btnEditarDatos" Content="EDITAR" Width="60" HorizontalAlignment="Center" Margin="2" Click="btnEditarDatos_Click" Background="#FF460DAB" FontSize="8" CommandParameter="editar"/>
+                <Button x:Name="btnCrearDatos" Content="CREAR" Width="60" HorizontalAlignment="Center" Margin="2" Click="btnCrearDatos_Click" Background="#FF460DAB" FontSize="8" CommandParameter="nuevo"/>
+                <Button x:Name="btnGuardarDatos" Content="GUARDAR" Width="60" HorizontalAlignment="Center" Margin="2" Click="btnGuardarDatos_Click" Background="#FF460DAB" FontSize="8" CommandParameter="guardar"/>
                 <Button x:Name="btnBorrarDatos" Content="BORRAR" Command="{Binding DeleteProveedorCommand}" CommandParameter="borrar" Width="60" HorizontalAlignment="Center" Margin="2" Click="btnBorrarDatos_Click" Background="#FF460DAB" FontSize="8"/>
                 <Button x:Name="btnAtras" Content="ATRAS" Width="60" HorizontalAlignment="Center" Margin="2" Click="btnAtras_Click" Background="#FF460DAB" FontSize="8"/>
             </StackPanel>

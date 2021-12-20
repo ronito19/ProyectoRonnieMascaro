@@ -99,8 +99,8 @@ namespace ProyectoRonnieMascaro.Models
 
 
         public ProveedoresModel currentProveedor { get; set; }
+        public static object CurrentProveedor { get; internal set; }
 
-        
         public static object listaProveedores;
 
 

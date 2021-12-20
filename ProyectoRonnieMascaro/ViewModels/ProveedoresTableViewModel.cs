@@ -42,7 +42,7 @@ namespace ProyectoRonnieMascaro.ViewModels
         public ProveedoresModel SelectedProveedor { get; set; }
 
 
-
+        public ProveedoresModel editarActivado { get; set; }
 
 
         private ProveedoresModel currentProveedor { get; set; }

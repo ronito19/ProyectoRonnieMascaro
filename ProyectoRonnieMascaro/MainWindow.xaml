@@ -6,8 +6,8 @@
         xmlns:local="clr-namespace:ProyectoRonnieMascaro"
         mc:Ignorable="d"
         Title="OPTICA" Height="800" Width="1200">
-    
-    
+
+
     <Grid >
 
         <Grid.Background>
@@ -21,10 +21,11 @@
 
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="200"/>
-            <ColumnDefinition/>
+            <ColumnDefinition Width="115*"/>
+            <ColumnDefinition Width="879*"/>
         </Grid.ColumnDefinitions>
 
-        <StackPanel Orientation="Vertical" Grid.Row="1">
+        <StackPanel Orientation="Vertical" Grid.Row="1" Margin="0,0.2,0,0.4">
 
             <StackPanel Orientation="Vertical">
                 <Button x:Name="btPrincipal" Margin="20,50" Content="PRINCIPAL" Width="120" Height="70" Command="{Binding UpdateViewCommand}" CommandParameter="principal" Background="Blue" FontSize="15" Foreground="#FFF9F0F0" FontWeight="Bold" Click="btPrincipal_Click" />
@@ -34,7 +35,7 @@
 
         </StackPanel>
 
-        <StackPanel Grid.Row="1" Grid.Column="1" >
+        <StackPanel Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2" Margin="0,0.2,-0.4,0.4" >
 
             <ContentControl Content="{Binding SelectedViewModel}"/>
 

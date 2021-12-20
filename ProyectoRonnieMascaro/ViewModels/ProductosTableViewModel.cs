@@ -30,6 +30,8 @@ namespace ProyectoRonnieMascaro.ViewModels
 
 
 
+        private ObservableCollection<string> ListaNuevaProveedores { get; set; }
+
         private ObservableCollection<ProductosModel> listaProveedores { get; set; }
 
 
@@ -102,6 +104,7 @@ namespace ProyectoRonnieMascaro.ViewModels
             NewProductoCommand = new NewProductoCommand(this);
             DeleteProductoCommand = new DeleteProductoCommand(this);
             AddToProductCommand = new AddToProductCommand(this);
+            ListaNuevaProveedores = new ObservableCollection<string>() { "1", "2", "3", "4", "5" };
         }
     }
 }

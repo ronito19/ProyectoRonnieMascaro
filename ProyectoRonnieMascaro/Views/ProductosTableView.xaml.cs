@@ -191,6 +191,7 @@ namespace ProyectoRonnieMascaro.Views
 
         private void btCrearProducto_Click(object sender, RoutedEventArgs e)
         {
+            
             E02ModificarProductos1();
             productoListView.SelectedIndex = productoListView.Items.Count;
         }
